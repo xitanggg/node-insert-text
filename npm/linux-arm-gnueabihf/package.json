@@ -1,6 +1,6 @@
 {
   "name": "@xitanggg/enigo-node-insert-text-linux-arm-gnueabihf",
-  "version": "0.0.0",
+  "version": "1.0.1",
   "os": [
     "linux"
   ],
