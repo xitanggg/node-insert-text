@@ -1,0 +1,21 @@
+{
+  "name": "@xitanggg/enigo-node-insert-text-linux-x64-musl",
+  "version": "0.0.0",
+  "os": [
+    "linux"
+  ],
+  "cpu": [
+    "x64"
+  ],
+  "main": "enigo-node-insert-text.linux-x64-musl.node",
+  "files": [
+    "enigo-node-insert-text.linux-x64-musl.node"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">= 10"
+  },
+  "libc": [
+    "musl"
+  ]
+}

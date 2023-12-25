@@ -1,0 +1,18 @@
+{
+  "name": "@xitanggg/enigo-node-insert-text-linux-arm-gnueabihf",
+  "version": "0.0.0",
+  "os": [
+    "linux"
+  ],
+  "cpu": [
+    "arm"
+  ],
+  "main": "enigo-node-insert-text.linux-arm-gnueabihf.node",
+  "files": [
+    "enigo-node-insert-text.linux-arm-gnueabihf.node"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">= 10"
+  }
+}

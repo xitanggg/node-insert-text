@@ -1,0 +1,15 @@
+{
+  "name": "@xitanggg/enigo-node-insert-text-darwin-universal",
+  "version": "0.0.0",
+  "os": [
+    "darwin"
+  ],
+  "main": "enigo-node-insert-text.darwin-universal.node",
+  "files": [
+    "enigo-node-insert-text.darwin-universal.node"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">= 10"
+  }
+}

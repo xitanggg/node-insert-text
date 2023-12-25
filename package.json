@@ -1,0 +1,54 @@
+{
+	"name": "@xitanggg/enigo-node-insert-text",
+	"version": "1.0.0",
+	"description": "Insert text in Node.js by pre-compiling the Enigo Rust library into native addon",
+	"main": "index.js",
+	"types": "index.d.ts",
+	"napi": {
+		"name": "enigo-node-insert-text",
+		"triples": {
+			"additional": [
+				"aarch64-apple-darwin",
+				"aarch64-linux-android",
+				"aarch64-unknown-linux-gnu",
+				"aarch64-unknown-linux-musl",
+				"aarch64-pc-windows-msvc",
+				"armv7-unknown-linux-gnueabihf",
+				"x86_64-unknown-linux-musl",
+				"x86_64-unknown-freebsd",
+				"i686-pc-windows-msvc",
+				"armv7-linux-androideabi",
+				"universal-apple-darwin",
+				"riscv64gc-unknown-linux-gnu"
+			]
+		}
+	},
+	"license": "MIT",
+	"devDependencies": {
+		"@napi-rs/cli": "^2.17.0",
+		"ava": "^5.1.1"
+	},
+	"ava": {
+		"timeout": "3m"
+	},
+	"engines": {
+		"node": ">= 10"
+	},
+	"scripts": {
+		"artifacts": "napi artifacts",
+		"build": "napi build --platform --release",
+		"build:debug": "napi build --platform",
+		"prepublishOnly": "napi prepublish -t npm",
+		"test": "ava",
+		"universal": "napi universal",
+		"version": "napi version"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/xitanggg/enigo-node-insert-text"
+	},
+	"author": "Xitang Zhao (https://github.com/xitanggg)",
+	"keywords": [
+		"automation"
+	]
+}
