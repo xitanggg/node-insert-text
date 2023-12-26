@@ -1,21 +1,25 @@
 {
-  "name": "@xitanggg/enigo-node-insert-text-linux-x64-musl",
-  "version": "1.0.2",
-  "os": [
-    "linux"
-  ],
-  "cpu": [
-    "x64"
-  ],
-  "main": "enigo-node-insert-text.linux-x64-musl.node",
-  "files": [
-    "enigo-node-insert-text.linux-x64-musl.node"
-  ],
-  "license": "MIT",
-  "engines": {
-    "node": ">= 10"
-  },
-  "libc": [
-    "musl"
-  ]
+	"name": "@xitanggg/enigo-node-insert-text-linux-x64-musl",
+	"version": "1.0.2",
+	"os": [
+		"linux"
+	],
+	"cpu": [
+		"x64"
+	],
+	"main": "enigo-node-insert-text.linux-x64-musl.node",
+	"files": [
+		"enigo-node-insert-text.linux-x64-musl.node"
+	],
+	"license": "MIT",
+	"engines": {
+		"node": ">= 10"
+	},
+	"libc": [
+		"musl"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/xitanggg/enigo-node-insert-text.git"
+	}
 }

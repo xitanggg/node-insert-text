@@ -1,15 +1,19 @@
 {
-  "name": "@xitanggg/enigo-node-insert-text-darwin-universal",
-  "version": "1.0.2",
-  "os": [
-    "darwin"
-  ],
-  "main": "enigo-node-insert-text.darwin-universal.node",
-  "files": [
-    "enigo-node-insert-text.darwin-universal.node"
-  ],
-  "license": "MIT",
-  "engines": {
-    "node": ">= 10"
-  }
+	"name": "@xitanggg/enigo-node-insert-text-darwin-universal",
+	"version": "1.0.2",
+	"os": [
+		"darwin"
+	],
+	"main": "enigo-node-insert-text.darwin-universal.node",
+	"files": [
+		"enigo-node-insert-text.darwin-universal.node"
+	],
+	"license": "MIT",
+	"engines": {
+		"node": ">= 10"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/xitanggg/enigo-node-insert-text.git"
+	}
 }

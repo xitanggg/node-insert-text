@@ -1,21 +1,25 @@
 {
-  "name": "@xitanggg/enigo-node-insert-text-linux-arm64-gnu",
-  "version": "1.0.2",
-  "os": [
-    "linux"
-  ],
-  "cpu": [
-    "arm64"
-  ],
-  "main": "enigo-node-insert-text.linux-arm64-gnu.node",
-  "files": [
-    "enigo-node-insert-text.linux-arm64-gnu.node"
-  ],
-  "license": "MIT",
-  "engines": {
-    "node": ">= 10"
-  },
-  "libc": [
-    "glibc"
-  ]
+	"name": "@xitanggg/enigo-node-insert-text-linux-arm64-gnu",
+	"version": "1.0.2",
+	"os": [
+		"linux"
+	],
+	"cpu": [
+		"arm64"
+	],
+	"main": "enigo-node-insert-text.linux-arm64-gnu.node",
+	"files": [
+		"enigo-node-insert-text.linux-arm64-gnu.node"
+	],
+	"license": "MIT",
+	"engines": {
+		"node": ">= 10"
+	},
+	"libc": [
+		"glibc"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/xitanggg/enigo-node-insert-text.git"
+	}
 }
