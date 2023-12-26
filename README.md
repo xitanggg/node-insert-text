@@ -2,7 +2,9 @@
 
 This project provides a simple Node.js util that allows you to programmatically insert text in desktop.
 
-The core of this project is powered by [enigo](https://github.com/enigo-rs/enigo), a cross platform input simulation in Rust. This project simply uses [NAPI-RS](https://napi.rs) to compile the `enigo.text` function as Node.js addons and exposes it to npm for easy use.
+The core of this project is powered by [enigo](https://github.com/enigo-rs/enigo), a cross platform input simulation in Rust. This project simply uses [NAPI-RS](https://github.com/napi-rs/napi-rs) to compile the `enigo.text` function as Node.js addons and exposes it to npm for easy use.
+
+Only supports Windows and Mac.
 
 ## Usage
 
