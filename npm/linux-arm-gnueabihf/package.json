@@ -1,22 +1,22 @@
 {
-	"name": "@xitanggg/enigo-node-insert-text-linux-arm-gnueabihf",
-	"version": "1.0.2",
-	"os": [
-		"linux"
-	],
-	"cpu": [
-		"arm"
-	],
-	"main": "enigo-node-insert-text.linux-arm-gnueabihf.node",
-	"files": [
-		"enigo-node-insert-text.linux-arm-gnueabihf.node"
-	],
-	"license": "MIT",
-	"engines": {
-		"node": ">= 10"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/xitanggg/enigo-node-insert-text.git"
-	}
+  "name": "@xitanggg/enigo-node-insert-text-linux-arm-gnueabihf",
+  "version": "1.0.3",
+  "os": [
+    "linux"
+  ],
+  "cpu": [
+    "arm"
+  ],
+  "main": "enigo-node-insert-text.linux-arm-gnueabihf.node",
+  "files": [
+    "enigo-node-insert-text.linux-arm-gnueabihf.node"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">= 10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xitanggg/enigo-node-insert-text.git"
+  }
 }
