@@ -1,6 +1,6 @@
 {
 	"name": "@xitanggg/enigo-node-insert-text",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"description": "Insert text in Node.js by pre-compiling the Enigo Rust library into native addon",
 	"main": "index.js",
 	"types": "index.d.ts",
