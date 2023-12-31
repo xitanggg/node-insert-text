@@ -1,6 +1,6 @@
 {
 	"name": "@xitanggg/enigo-node-insert-text",
-	"version": "1.0.4",
+	"version": "1.0.5",
 	"description": "Insert text on desktop in Node.js via Node-API native addon",
 	"main": "index.js",
 	"types": "index.d.ts",
