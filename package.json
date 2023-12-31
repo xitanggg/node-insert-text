@@ -1,7 +1,7 @@
 {
 	"name": "@xitanggg/enigo-node-insert-text",
 	"version": "1.0.4",
-	"description": "Insert text in Node.js by pre-compiling the Enigo Rust library into native addon",
+	"description": "Insert text on desktop in Node.js via Node-API native addon",
 	"main": "index.js",
 	"types": "index.d.ts",
 	"napi": {
@@ -41,7 +41,11 @@
 	},
 	"author": "Xitang Zhao (https://github.com/xitanggg)",
 	"keywords": [
-		"automation"
+		"automation",
+		"desktop",
+		"node",
+		"native addon",
+		"electron"
 	],
 	"packageManager": "yarn@4.0.2"
 }
