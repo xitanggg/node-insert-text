@@ -12,7 +12,7 @@ This package provides a simple Node.js util that allows you to programmatically 
 npm i @xitanggg/enigo-node-insert-text
 ```
 
-## Usage
+## ℹ️Usage
 
 ```typescript
 import { insertText } from '@xitanggg/enigo-node-insert-text;
