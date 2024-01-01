@@ -1,22 +1,31 @@
 {
-  "name": "@xitanggg/enigo-node-insert-text-win32-ia32-msvc",
-  "version": "1.0.5",
-  "os": [
-    "win32"
-  ],
-  "cpu": [
-    "ia32"
-  ],
-  "main": "enigo-node-insert-text.win32-ia32-msvc.node",
-  "files": [
-    "enigo-node-insert-text.win32-ia32-msvc.node"
-  ],
-  "license": "MIT",
-  "engines": {
-    "node": ">= 10"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/xitanggg/enigo-node-insert-text.git"
-  }
+	"name": "@xitanggg/node-insert-text-win32-ia32-msvc",
+	"version": "1.0.5",
+	"os": [
+		"win32"
+	],
+	"cpu": [
+		"ia32"
+	],
+	"main": "node-insert-text.win32-ia32-msvc.node",
+	"files": [
+		"node-insert-text.win32-ia32-msvc.node"
+	],
+	"description": "Insert text on desktop in Node.js via Node-API native addon",
+	"keywords": [
+		"automation",
+		"desktop",
+		"node",
+		"native addon",
+		"electron"
+	],
+	"author": "Xitang Zhao (https://github.com/xitanggg)",
+	"license": "MIT",
+	"engines": {
+		"node": ">= 10"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/xitanggg/node-insert-text.git"
+	}
 }

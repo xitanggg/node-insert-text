@@ -1,3 +1,3 @@
-# `@xitanggg/enigo-node-insert-text-darwin-universal`
+# `@xitanggg/node-insert-text-darwin-universal`
 
-This is the **universal-apple-darwin** binary for `@xitanggg/enigo-node-insert-text`
+This is the **universal-apple-darwin** binary for `@xitanggg/node-insert-text`
