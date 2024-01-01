@@ -84,9 +84,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@xitanggg/enigo-node-insert-text@workspace:.":
+"@xitanggg/node-insert-text@workspace:.":
   version: 0.0.0-use.local
-  resolution: "@xitanggg/enigo-node-insert-text@workspace:."
+  resolution: "@xitanggg/node-insert-text@workspace:."
   dependencies:
     "@napi-rs/cli": "npm:^2.17.0"
     ava: "npm:^5.1.1"

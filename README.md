@@ -1,4 +1,4 @@
-# Enigo Node Insert Text
+# Node Insert Text
 
 This package provides a simple Node.js util that allows you to programmatically insert text on desktop.
 
@@ -9,13 +9,13 @@ This package provides a simple Node.js util that allows you to programmatically 
 ## 📦Installation
 
 ```bash
-npm i @xitanggg/enigo-node-insert-text
+npm i @xitanggg/node-insert-text
 ```
 
 ## ℹ️Usage
 
 ```typescript
-import { insertText } from '@xitanggg/enigo-node-insert-text;
+import { insertText } from '@xitanggg/node-insert-text;
 
 insertText("👋Hello World! This line is inserted programmatically🤖");
 ```
