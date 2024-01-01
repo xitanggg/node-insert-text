@@ -29,6 +29,7 @@ insertText("👋Hello World! This line is inserted programmatically🤖");
 ## 💡Implementation
 
 **Core Logic**
+
 The implementation is written in Rust and is ~20 lines of code (see `/src/lib.rs` for full source code)
 
 The happy path is a wrapper of the `text` function of [enigo](https://github.com/enigo-rs/enigo), which is a cross platform input simulation library in Rust. The default behavior simply calls `enigo.text` to perform text insertion, which works for most use cases.
