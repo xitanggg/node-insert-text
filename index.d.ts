@@ -10,5 +10,10 @@
  *
  * ##### Arguments
  * * `text` - Text to be inserted
+ * * `insertWithPaste` - An optional boolean that sets whether to insert text with the paste
+ *                       method. Default to false. (Setting true to use the paste method is
+ *                       sometimes useful when the default insert method doesn't work for certain apps)
+ * * `arrowKeyToClickBeforeInsert` - An optional string that sets which arrow key to click before
+ *                                   inserting text. Can be either "left" or "right". Default to None.
  */
-export function insertText(text: string): void
+export function insertText(text: string, insertWithPaste?: boolean | undefined | null, arrowKeyToClickBeforeInsert?: string | undefined | null): void
