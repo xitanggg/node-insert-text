@@ -15,5 +15,15 @@
  *                       sometimes useful when the default insert method doesn't work for certain apps)
  * * `arrowKeyToClickBeforeInsert` - An optional string that sets which arrow key to click before
  *                                   inserting text. Can be either "left" or "right". Default to None.
+ * * `copyWaitTimeMs`  - An optional number that sets how long to wait after performing the copy
+ *                       operation before pasting the clipboard text. It defaults to 5ms, which
+ *                       works for most use cases with short insert text. However, a larger value
+ *                       would be needed to support use case for long insert text that takes
+ *                       longer to copy to the clipboard. `copyWaitTimeMs` is only used when
+ *                       using the paste method, i.e. when `insertWithPaste` is set to true.
+ * * `pasteWaitTimeMs` - An optional number that sets how long to wait after performing the paste
+ *                       operation before restoring the previous clipboard text. It defaults to 20ms.
+ *                       `pasteWaitTimeMs` is only used when using the paste method, i.e. when
+ *                       `insertWithPaste` is set to true.
  */
-export function insertText(text: string, insertWithPaste?: boolean | undefined | null, arrowKeyToClickBeforeInsert?: string | undefined | null): void
+export function insertText(text: string, insertWithPaste?: boolean | undefined | null, arrowKeyToClickBeforeInsert?: string | undefined | null, copyWaitTimeMs?: number | undefined | null, pasteWaitTimeMs?: number | undefined | null): void

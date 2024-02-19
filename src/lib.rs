@@ -10,6 +10,9 @@ use enigo::{
 };
 use std::{thread, time};
 
+static DEFAULT_COPY_WAIT_TIME_MS: u32 = 5;
+static DEFAULT_PASTE_WAIT_TIME_MS: u32 = 20;
+
 /// Insert the given text at the current cursor position.
 /// 
 /// The whole text string is entered at once so it is performed quickly.
@@ -21,8 +24,18 @@ use std::{thread, time};
 ///                       sometimes useful when the default insert method doesn't work for certain apps)
 /// * `arrowKeyToClickBeforeInsert` - An optional string that sets which arrow key to click before 
 ///                                   inserting text. Can be either "left" or "right". Default to None. 
+/// * `copyWaitTimeMs`  - An optional number that sets how long to wait after performing the copy
+///                       operation before pasting the clipboard text. It defaults to 5ms, which 
+///                       works for most use cases with short insert text. However, a larger value
+///                       would be needed to support use case for long insert text that takes 
+///                       longer to copy to the clipboard. `copyWaitTimeMs` is only used when 
+///                       using the paste method, i.e. when `insertWithPaste` is set to true.
+/// * `pasteWaitTimeMs` - An optional number that sets how long to wait after performing the paste
+///                       operation before restoring the previous clipboard text. It defaults to 20ms.
+///                       `pasteWaitTimeMs` is only used when using the paste method, i.e. when
+///                       `insertWithPaste` is set to true. 
 #[napi]
-pub fn insert_text(text: String, insert_with_paste: Option<bool>, arrow_key_to_click_before_insert: Option<String>){
+pub fn insert_text(text: String, insert_with_paste: Option<bool>, arrow_key_to_click_before_insert: Option<String>, copy_wait_time_ms: Option<u32>, paste_wait_time_ms: Option<u32>){
   let mut enigo = Enigo::new(&Settings::default()).unwrap();
 
   let arrow_key_to_click_before_insert = arrow_key_to_click_before_insert.unwrap_or(String::new());
@@ -42,6 +55,9 @@ pub fn insert_text(text: String, insert_with_paste: Option<bool>, arrow_key_to_c
     // Set insert text to clipboard
     clipboard.set_text(&text).unwrap();
 
+    // Wait for clipboard to be updated with copied insert text
+    thread::sleep(time::Duration::from_millis(u64::from(copy_wait_time_ms.unwrap_or(DEFAULT_PASTE_WAIT_TIME_MS))));
+    
     // Simulate Ctrl/Cmd + V keyboard input to paste text
     let control_or_command_key = if cfg!(target_os = "macos") {
       Key::Meta
@@ -51,10 +67,9 @@ pub fn insert_text(text: String, insert_with_paste: Option<bool>, arrow_key_to_c
     enigo.key(control_or_command_key, Press).unwrap();
     enigo.key(Key::Unicode('v'), Click).unwrap();
     enigo.key(control_or_command_key, Release).unwrap();
-
-    // Wait some time for paste to be processed
-    let twenty_ms = time::Duration::from_millis(20);
-    thread::sleep(twenty_ms);
+    
+    // Wait for paste to be processed
+    thread::sleep(time::Duration::from_millis(u64::from(paste_wait_time_ms.unwrap_or(DEFAULT_COPY_WAIT_TIME_MS))));
     
     // Restore clipboard previous existing text to minimize side effects to users
     clipboard.set_text(&clipboard_existing_text).unwrap();
