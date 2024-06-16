@@ -1,6 +1,6 @@
 [package]
 edition = "2021"
-name = "enigo-node_insert-text"
+name = "node-insert-text"
 version = "0.0.0"
 
 [lib]
@@ -18,3 +18,4 @@ napi-build = "2.0.1"
 
 [profile.release]
 lto = true
+strip = "symbols"
