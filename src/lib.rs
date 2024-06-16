@@ -21,7 +21,8 @@ static DEFAULT_PASTE_WAIT_TIME_MS: u32 = 20;
 /// * `text` - Text to be inserted
 /// * `insertWithPaste` - An optional boolean that sets whether to insert text with the paste 
 ///                       method. Default to false. (Setting true to use the paste method is 
-///                       sometimes useful when the default insert method doesn't work for certain apps)
+///                       sometimes useful when the default insert method doesn't work for certain 
+///                       apps. Note this feature is experimental)
 /// * `arrowKeyToClickBeforeInsert` - An optional string that sets which arrow key to click before 
 ///                                   inserting text. Can be either "left" or "right". Default to None. 
 /// * `copyWaitTimeMs`  - An optional number that sets how long to wait after performing the copy
@@ -47,8 +48,8 @@ pub fn insert_text(text: String, insert_with_paste: Option<bool>, arrow_key_to_c
 
   let insert_with_paste = insert_with_paste.unwrap_or(false);
   if insert_with_paste{
-    // If input text is empty, we simply perform paste, with the assumption that user would
-    // handle setting the insert text to clipboard and restoring the clipboard state themselves
+    // If text is empty, we simply perform paste, with the assumption that user would handle
+    // setting the insert text to clipboard and restoring the clipboard state themselves
     if text.is_empty(){
       paste(&mut enigo);
     }else{

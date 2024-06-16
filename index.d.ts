@@ -12,7 +12,8 @@
  * * `text` - Text to be inserted
  * * `insertWithPaste` - An optional boolean that sets whether to insert text with the paste
  *                       method. Default to false. (Setting true to use the paste method is
- *                       sometimes useful when the default insert method doesn't work for certain apps)
+ *                       sometimes useful when the default insert method doesn't work for certain
+ *                       apps. Note this feature is experimental)
  * * `arrowKeyToClickBeforeInsert` - An optional string that sets which arrow key to click before
  *                                   inserting text. Can be either "left" or "right". Default to None.
  * * `copyWaitTimeMs`  - An optional number that sets how long to wait after performing the copy
