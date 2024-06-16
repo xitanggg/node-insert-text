@@ -23,7 +23,7 @@ insertText("👋Hello World! This line is inserted programmatically🤖");
 `insertText` can accept 3 arguments
 
 1. `text` - Text to be inserted
-2. `insertWithPaste` - An optional boolean that sets whether to insert text with the paste method. Default to false. (Setting true to use the paste method is sometimes useful when the default insert method doesn't work for certain apps)
+2. `insertWithPaste` - An optional boolean that sets whether to insert text with the paste method. Default to false. (Setting true to use the paste method is sometimes useful when the default insert method doesn't work for certain apps. Note this feature is experimental)
 3. `arrowKeyToClickBeforeInsert` - An optional string that sets which arrow key to click before inserting text. Can be either "left" or "right". Default to None.
 
 ## 💡Implementation
@@ -34,7 +34,7 @@ The implementation is written in Rust and is ~20 lines of code (see `/src/lib.rs
 
 The happy path is a wrapper of the `text` function of [enigo](https://github.com/enigo-rs/enigo), which is a cross platform input simulation library in Rust. The default behavior simply calls `enigo.text` to perform text insertion, which works for most use cases.
 
-However, some apps might not support text insertion, so a `insertWithPaste` fallback option is provided, which inserts text via clipboard paste in a 4 steps processes:
+However, some apps might not support text insertion, so a `insertWithPaste` experimental fallback option is provided, which inserts text via clipboard paste in a 4 steps processes:
 
 1. Save clipboard existing text
 2. Set text to be inserted to clipboard

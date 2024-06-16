@@ -47,33 +47,43 @@ pub fn insert_text(text: String, insert_with_paste: Option<bool>, arrow_key_to_c
 
   let insert_with_paste = insert_with_paste.unwrap_or(false);
   if insert_with_paste{
-    let mut clipboard = Clipboard::new().unwrap();
-
-    // Save clipboard existing text
-    let clipboard_existing_text = clipboard.get_text().unwrap_or(String::new());
-
-    // Set insert text to clipboard
-    clipboard.set_text(&text).unwrap();
-
-    // Wait for clipboard to be updated with copied insert text
-    thread::sleep(time::Duration::from_millis(u64::from(copy_wait_time_ms.unwrap_or(DEFAULT_PASTE_WAIT_TIME_MS))));
-    
-    // Simulate Ctrl/Cmd + V keyboard input to paste text
-    let control_or_command_key = if cfg!(target_os = "macos") {
-      Key::Meta
-    } else {
-      Key::Control
-    };
-    enigo.key(control_or_command_key, Press).unwrap();
-    enigo.key(Key::Unicode('v'), Click).unwrap();
-    enigo.key(control_or_command_key, Release).unwrap();
-    
-    // Wait for paste to be processed
-    thread::sleep(time::Duration::from_millis(u64::from(paste_wait_time_ms.unwrap_or(DEFAULT_COPY_WAIT_TIME_MS))));
-    
-    // Restore clipboard previous existing text to minimize side effects to users
-    clipboard.set_text(&clipboard_existing_text).unwrap();
+    // If input text is empty, we simply perform paste, with the assumption that user would
+    // handle setting the insert text to clipboard and restoring the clipboard state themselves
+    if text.is_empty(){
+      paste(&mut enigo);
+    }else{
+      let mut clipboard = Clipboard::new().unwrap();
+  
+      // Save clipboard existing text
+      let clipboard_existing_text = clipboard.get_text().unwrap_or(String::new());
+  
+      // Set insert text to clipboard
+      clipboard.set_text(&text).unwrap();
+  
+      // Wait for clipboard to be updated with copied insert text
+      thread::sleep(time::Duration::from_millis(u64::from(copy_wait_time_ms.unwrap_or(DEFAULT_PASTE_WAIT_TIME_MS))));
+      
+      paste(&mut enigo);
+      
+      // Wait for paste to be processed
+      thread::sleep(time::Duration::from_millis(u64::from(paste_wait_time_ms.unwrap_or(DEFAULT_COPY_WAIT_TIME_MS))));
+      
+      // Restore clipboard previous existing text to minimize side effects to users
+      clipboard.set_text(&clipboard_existing_text).unwrap();
+    }
   }else{
     enigo.text(&text).unwrap();
   }
+}
+
+// Simulate Ctrl/Cmd + V keyboard input to paste text from clipboard
+fn paste(enigo: &mut Enigo){
+  let control_or_command_key = if cfg!(target_os = "macos") {
+    Key::Meta
+  } else {
+    Key::Control
+  };
+  enigo.key(control_or_command_key, Press).unwrap();
+  enigo.key(Key::Unicode('v'), Click).unwrap();
+  enigo.key(control_or_command_key, Release).unwrap();
 }
