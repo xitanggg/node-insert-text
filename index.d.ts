@@ -26,5 +26,8 @@
  *                       operation before restoring the previous clipboard text. It defaults to 20ms.
  *                       `pasteWaitTimeMs` is only used when using the paste method, i.e. when
  *                       `insertWithPaste` is set to true.
+ * * `releaseCommandKeyBeforeTextInsert` - An optional boolean that sets whether to release the
+ *                                         macOS command key before inserting text to work around
+ *                                         a macOS issue with text insert method. Default to false.
  */
-export function insertText(text: string, insertWithPaste?: boolean | undefined | null, arrowKeyToClickBeforeInsert?: string | undefined | null, copyWaitTimeMs?: number | undefined | null, pasteWaitTimeMs?: number | undefined | null): void
+export function insertText(text: string, insertWithPaste?: boolean | undefined | null, arrowKeyToClickBeforeInsert?: string | undefined | null, copyWaitTimeMs?: number | undefined | null, pasteWaitTimeMs?: number | undefined | null, releaseCommandKeyBeforeTextInsert?: boolean | undefined | null): void
