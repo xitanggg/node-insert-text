@@ -10,24 +10,25 @@
  *
  * ##### Arguments
  * * `text` - Text to be inserted
- * * `insertWithPaste` - An optional boolean that sets whether to insert text with the paste
- *                       method. Default to false. (Setting true to use the paste method is
- *                       sometimes useful when the default insert method doesn't work for certain
- *                       apps. Note this feature is experimental)
+ * * `insertWithPaste` - An optional boolean that sets whether to insert text with the paste method.
+ *                       Default to false. (Setting true to use the paste method is useful to bypass
+ *                       some limitations in the default insert method. For example, the default
+ *                       insert method may not work for some apps, and in Mac, it doesn't work
+ *                       when certain key, such as Cmd, is pressed during insert.)
  * * `arrowKeyToClickBeforeInsert` - An optional string that sets which arrow key to click before
  *                                   inserting text. Can be either "left" or "right". Default to None.
- * * `copyWaitTimeMs`  - An optional number that sets how long to wait after performing the copy
- *                       operation before pasting the clipboard text. It defaults to 5ms, which
- *                       works for most use cases with short insert text. However, a larger value
- *                       would be needed to support use case for long insert text that takes
- *                       longer to copy to the clipboard. `copyWaitTimeMs` is only used when
- *                       using the paste method, i.e. when `insertWithPaste` is set to true.
  * * `pasteWaitTimeMs` - An optional number that sets how long to wait after performing the paste
- *                       operation before restoring the previous clipboard text. It defaults to 20ms.
+ *                       operation before restoring the previous clipboard state. Default to 30ms.
  *                       `pasteWaitTimeMs` is only used when using the paste method, i.e. when
- *                       `insertWithPaste` is set to true.
- * * `releaseCommandKeyBeforeTextInsert` - An optional boolean that sets whether to release the
- *                                         macOS command key before inserting text to work around
- *                                         a macOS issue with text insert method. Default to false.
+ *                       `insertWithPaste` is set to true. (Beware of setting this value too low,
+ *                       as it may end up pasting the previous clipboard text/image)
  */
-export function insertText(text: string, insertWithPaste?: boolean | undefined | null, arrowKeyToClickBeforeInsert?: string | undefined | null, copyWaitTimeMs?: number | undefined | null, pasteWaitTimeMs?: number | undefined | null, releaseCommandKeyBeforeTextInsert?: boolean | undefined | null): void
+export function insertText(text: string, insertWithPaste?: boolean | undefined | null, arrowKeyToClickBeforeInsert?: string | undefined | null, pasteWaitTimeMs?: number | undefined | null): void
+/**
+ * Simulate Ctrl+ V (Cmd + V in Mac) keyboard input to perform paste
+ *
+ * ##### Arguments
+ * * `arrowKeyToClickBeforePaste` - An optional string that sets which arrow key to click before
+ *                                  pasting. Can be either "left" or "right". Default to None.
+ */
+export function paste(arrowKeyToClickBeforePaste?: string | undefined | null): void

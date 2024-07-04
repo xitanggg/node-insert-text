@@ -310,6 +310,7 @@ if (!nativeBinding) {
   throw new Error(`Failed to load native binding`)
 }
 
-const { insertText } = nativeBinding
+const { insertText, paste } = nativeBinding
 
 module.exports.insertText = insertText
+module.exports.paste = paste
